@@ -1,6 +1,6 @@
 # Flip Card – 3D Glassmorphism Credit Card UI
 
-![](https://github.com/AkashSharma-Artist/FitClub-Gym-Fitness-Landing-Page/blob/main/ChatGPT%20Image%20Jul%209%2C%202026%2C%2005_46_27%20PM.png)
+![](https://github.com/AkashSharma-Artist/Flip-Card-3D-Glassmorphism-Credit-Card-UI/blob/main/%7B3C4B0D09-6964-4FA2-B929-A52C6E5B65CA%7D.png)
 
 Flip Card is a front-end UI component that recreates a realistic credit 
 card with a smooth 3D flip animation on hover. Built entirely with HTML 
@@ -22,4 +22,4 @@ create genuine 3D flipping behavior, combined with a glassmorphism
 - CSS3 (3D transforms, perspective, backdrop-filter, media queries)
 - Google Fonts (Poppins, Merriweather)
 
-![](https://github.com/AkashSharma-Artist/FitClub-Gym-Fitness-Landing-Page/blob/main/ChatGPT%20Image%20Jul%209%2C%202026%2C%2005_46_27%20PM.png)
+![](https://github.com/AkashSharma-Artist/Flip-Card-3D-Glassmorphism-Credit-Card-UI/blob/main/CARD%20UI.mp4)
