@@ -1,0 +1,213 @@
+/*importing fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;  /*default jitne hai utne hata dega*/
+    padding: 0;
+    box-sizing: border-box; /*
+
+    Suppose an example
+    div {
+    width: 200px;
+    padding: 20px;
+    border: 10px solid black;
+}
+    📌 Expected Width: 200px
+    ❌ Actual Width: 200px (content) + 20px (left padding) + 20px (right padding) + 10px (left border) + 10px (right border) = 260px
+     
+    👉 The box becomes bigger than expected! 😟  or box bta dene se usi ke andr lega*/ 
+    font-family: "Poppins", sans-serif;
+}
+
+section{
+    position: relative; /*When we create pseudo-elements (::before, ::after), we position them inside the main element.
+    For this to work correctly, we need to set the main element’s position to relative, so the pseudo-elements stay inside it
+     instead of moving randomly.*/
+    min-height: 100vh;  /* Makes the section as tall as the viewport (full screen).*/
+    width: 100%;
+    background: #121321;
+    display: flex;
+    align-items: center; /* Centers content vertically.*/
+    justify-content: center; /* Centers content horizontally.*/
+    color: #fff; /*iske andrr ka color*/
+    perspective: 1000px; /*iska mtlb jo mudega vo pass se mudega ya durr se vo bta rha kaam jada krke dekhna smjh ajayega 
+    pehle 100 krna*/
+}
+
+section::before{
+    content: "";  /*Creates an empty shape.*/
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(-150px, -100px);
+    background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+
+    /*WHY ABSOLUTE
+    
+    position: absolute; removes an element from the normal flow of the page and positions it relative to the
+    nearest position: relative; ancestor.
+
+    👉 If no ancestor has position: relative;, it will be positioned relative to the entire page (<html>).
+    */
+} 
+
+section::after{
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 50%;
+    transform: translate(150px, 100px);
+    background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+} 
+
+/*WHY USING BEFORE AND AFTER
+
+✅ No Extra HTML Needed: Instead of adding extra <div> or <span> elements in HTML, we can use CSS to generate elements dynamically.
+✅ Great for Decorations: You can add background shapes, icons, effects, or visual elements without changing the actual content.
+✅ Better Performance: Keeps the HTML clean and reduces unnecessary elements.
+
+*/
+
+.container{
+    position: relative; /*Uses position: relative; so child elements can be positioned inside it.*/
+    height: 225px;
+    width: 375px;
+    z-index: 100;  /*makes sure it appears above other elements.*/
+    transition: 0.6s;
+    transform-style: preserve-3d; /*This line tells the browser: 🧠 "Hey browser,
+     please keep all child elements (like front & back card) in 3D space when they rotate."*/
+}
+
+.container:hover{
+    transform: rotateY(180deg); /*When you hover your mouse on the card, this will rotate the card along the Y-axis by 180°.*/
+}
+
+.container .card{
+    position: absolute; /*Places front and back cards on top of each other.*/
+    height: 100%; /* Takes full height of .container (225px) */
+    width: 100%;  /* Takes full width of .container (375px) */
+    border-radius: 25px;  /* Gives the card rounded corners.*/
+    padding: 25px;
+    backdrop-filter: blur(25px);  /*Creates a blurry, frosted glass effect (good for glassmorphism UI).*/
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgb(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backface-visibility: hidden; /*Hides the back side of the card when you're looking at the front.*/
+}
+
+
+/* ABOUT RGBA COLORS
+
+rgba(0, 0, 0, 0.25) is a way to define a color in CSS with transparency.
+
+Let's break it down:
+
+rgb(0, 0, 0) → This part represents the color in Red, Green, and Blue (RGB).
+0, 0, 0 means black because all three values are 0.
+a = 0.25 → This is the alpha (transparency) value, which ranges from 0 (fully transparent) to 1 (fully opaque).
+0.25 means 25% visible (very light black or dark gray).
+*/
+
+
+.front-face header,
+.front-face .logo{  
+    
+    /* .front-face header → Targets the <header> inside any element with the .front-face class.
+    2️⃣ .front-face .logo → Targets any element with the .logo class inside .front-face.*/
+
+    display: flex;  /*for making everything in row*/
+    align-items: center; /*Ensures all items inside (like images and text) are vertically centered.*/
+}
+
+.front-face header{
+    justify-content: space-between;  /*Pushes the logo to the left and the chip image to the right.*/
+}
+
+.front-face .logo img{
+    width: 48px;         
+    margin-right: 10px;  /*side me space or duri diya hai*/
+}
+
+h5{
+    font-size: 16px;
+    font-weight: 400;  /*font me changes*/
+}
+
+.front-face .chip{
+    width: 50px;  /*chip ko choa krta hua*/
+}
+
+.front-face .card-details{
+    display: flex;
+    margin-top: 40px;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+h6{
+    font-size: 10px;
+    font-weight: 400;
+}
+
+h5.number{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+h5.name{
+    margin-top: 20px;
+}
+
+.card.back-face {
+     border: none;
+     padding: 15px 25px 25px 25px;
+     transform: rotateY(180deg); /* Rotates the back side 180 degrees so it's hidden by default and only visible when flipped.*/
+}
+
+.card.back-face h6{
+    font-size: 8px; /*It makes the small Customer service text very tiny by setting:*/
+}
+
+.card.back-face .magnetic-strip {
+    position: absolute; /*Fixes the magnetic strip at a fixed position inside the .card.back-face.*/
+    top: 40px; /*Moves the strip 40px from the top.*/
+    left: 0;  /*Aligns the strip to the left side.*/
+    height: 45px; /*height diye hai or width full*/
+    width: 100%;
+    background: #000;
+}
+
+.card.card.back-face .signature{
+    display: flex;   /*Places the signature number (<i>) inside the box,
+     also is used to align and position elements easily inside a container.    */
+    justify-content: flex-end; /*Aligns the signature number to the right side*/
+    align-items: center;
+    margin-top: 80px;
+    height: 40px;
+    width: 85%;
+    border-radius: 6px;
+    background: repeating-linear-gradient(
+    #fff,
+    #fff 3px,
+    #efefef 0px,
+    #efefef 9px
+    );  /*This creates the striped pattern on the signature box.*/
+}
+
+.signature i{
+    color: #000;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-right: -30px;
+    z-index: -1;   /*Pushes the security code behind the white box to look realistic*/
+}
+
+.card.back-face h5{
+    font-size: 8px;
+    margin-top: 15px;
+}
