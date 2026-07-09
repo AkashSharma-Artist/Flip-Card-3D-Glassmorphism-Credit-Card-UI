@@ -23,3 +23,4 @@ create genuine 3D flipping behavior, combined with a glassmorphism
 - Google Fonts (Poppins, Merriweather)
 
 ![](https://github.com/AkashSharma-Artist/Flip-Card-3D-Glassmorphism-Credit-Card-UI/blob/main/CARD%20UI.mp4)
+![](https://github.com/AkashSharma-Artist/Flip-Card-3D-Glassmorphism-Credit-Card-UI/blob/main/CARD%20UI.mp4)
