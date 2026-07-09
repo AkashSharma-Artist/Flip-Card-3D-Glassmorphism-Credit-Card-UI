@@ -22,5 +22,5 @@ create genuine 3D flipping behavior, combined with a glassmorphism
 - CSS3 (3D transforms, perspective, backdrop-filter, media queries)
 - Google Fonts (Poppins, Merriweather)
 
-![](https://github.com/AkashSharma-Artist/Flip-Card-3D-Glassmorphism-Credit-Card-UI/blob/main/CARD%20UI.mp4)
-![](https://github.com/AkashSharma-Artist/Flip-Card-3D-Glassmorphism-Credit-Card-UI/blob/main/CARD%20UI.mp4)
+![](https://github.com/AkashSharma-Artist/Flip-Card-3D-Glassmorphism-Credit-Card-UI/blob/main/Screenshot%202026-07-10%20012341.png)
+![](https://github.com/AkashSharma-Artist/Flip-Card-3D-Glassmorphism-Credit-Card-UI/blob/main/%7BFD424D29-80A7-4087-81DE-67B1668D55C5%7D.png)
